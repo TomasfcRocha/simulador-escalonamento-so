@@ -17,14 +17,15 @@ typedef enum  {
 } task_status_en;
 
 // Define the Process Control Block (PCB) structure
-typedef struct pcb_st{
-    int32_t pid;                   // Process ID
-    task_status_en status;         // Current status of the task defined by the pcb
-    uint32_t time_ms;              // Time requested by application in milliseconds
-    uint32_t ellapsed_time_ms;     // Time ellapsed since start in milliseconds
-    uint32_t slice_start_ms;       // Time when the current time slice started
-    uint32_t sockfd;               // Socket file descriptor for communication with the application
-    uint32_t last_update_time_ms;  // Last time the PCB was updated
+typedef struct pcb_st {
+    int32_t pid;                      
+    task_status_en status;            
+    uint32_t time_ms;                 
+    uint32_t ellapsed_time_ms;     
+    uint32_t slice_start_ms;         
+    uint32_t sockfd;                 
+    uint32_t last_update_time_ms;  
+    int mlfq_level;                   // 0 = Alta, 1 = Média, 2 = Baixa
+    uint32_t wait_start_ms;           // Timestamp de quando entrou na fila de espera (para o Aging)
 } pcb_t;
-
 #endif //PCB_H

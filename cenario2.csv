@@ -1,0 +1,7 @@
+# id, arrival, burst (Cenário 2: Batch -> Interativo -> Batch)
+# Processo 1 começa batch (pesado), depois reentra interativo, depois batch de novo
+1, 0, 15
+2, 1, 2
+3, 2, 2
+1, 20, 2
+1, 30, 12

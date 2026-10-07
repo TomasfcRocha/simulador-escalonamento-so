@@ -11,6 +11,8 @@
 #include <sys/un.h>
 
 #include "debug.h"
+#include <ctime>
+#include <bits/time.h>
 
 static uint32_t PID = 0;
 static uint32_t start_time_ms = 0;
